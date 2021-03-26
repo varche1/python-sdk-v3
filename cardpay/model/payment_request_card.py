@@ -60,9 +60,13 @@ class PaymentRequestCard(object):
 
         if acct_type is not None:
             self.acct_type = acct_type
-        self.expiration = expiration
-        self.holder = holder
-        self.pan = pan
+        if expiration is not None:
+            self.expiration = expiration
+        if holder is not None:
+            self.holder = holder
+        if pan is not None:
+            self.pan = pan
+
         self.security_code = security_code
 
     class AcctType(object):
